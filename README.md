@@ -5,11 +5,15 @@ This is our final Reinforcement Learning project for EECS 738 at the University 
 
 ## Task
 
-The reinforcement learning task is a single level of a simple platformer game created using the Godot game engine. 
+The reinforcement learning task is a single level of a simple platformer game we created using the Godot game engine.
+As such, all code is written in Godot's Python-esque GDScript language.
 
 The goal of the main character is to collect all 6 'books' within the level and reach the end without dying due to contact with enemies.
 The player may move left, move right, and jump. Jumping on the heads of enemies does not deal damage.
 Dying or reaching the goal simply resets the game state, so that reinforcement learning can continue.
+
+Users can play the game using manual input using the 'Play' option on the title screen, or can choose to let the RL algorithm play.
+
 ## RL
 
 The reinforcement learning algorithm is a very simple, 1-state q-learning algorithm. The actor explores (makes a random move) 1/20th of the time.
