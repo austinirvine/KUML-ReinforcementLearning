@@ -3,6 +3,7 @@ extends KinematicBody2D
 var health
 var book_count
 var is_dead
+var enemiesList = []
 
 var motion = Vector2()
 
@@ -48,7 +49,27 @@ func _movement() :
 
 	motion = move_and_slide(motion, UP)
 	pass
+func moveRL(action):
+	if is_dead:
+		return
 
+	motion.y += GRAVITY
+
+	if action==0:
+		motion.x = -SPEED
+		pass
+	elif action==1:
+		motion.x = SPEED
+	else:
+		motion.x = 0
+
+	if is_on_floor():
+		if action==2:
+			motion.y = JUMP_HEIGHT
+			pass
+
+	motion = move_and_slide(motion, UP)
+	pass
 func hurt():
 	health -= 10
 	print(health)
@@ -76,4 +97,6 @@ func _dead():
 func _on_Timer_timeout():
 	get_parent().respawn()
 	self.queue_free()
+	for i in range(enemiesList.size()):
+		enemiesList[i].queue_free()
 	pass # replace with function body

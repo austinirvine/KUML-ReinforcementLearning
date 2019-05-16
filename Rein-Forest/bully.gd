@@ -9,6 +9,8 @@ const SPEED = 100
 const JUMP_HEIGHT = -200
 
 func _ready():
+	var playerNode = ("../player spawner/Player")
+	#playerNode.enemiesList.append(self)
 	can_delete = false
 	pass
 
