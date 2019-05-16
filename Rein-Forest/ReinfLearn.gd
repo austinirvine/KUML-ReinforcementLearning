@@ -59,7 +59,7 @@ func learn():
 	if(currPlayerPosX>prevPlayerPosX):
 		reward+= 100
 	elif (prevPlayerPosX>currPlayerPosX):
-		reward-=100
+		reward-=0
 	if (currBookCount>prevBookCount):
 		reward+=50
 	if (currHealth<prevHealth):

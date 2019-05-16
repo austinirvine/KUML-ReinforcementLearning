@@ -22,7 +22,9 @@ We hypothesized that a very simple RL algorithm could be trained to play this ga
 The reinforcement learning algorithm is a very simple, 1-state q-learning algorithm. The actor explores (makes a random move) 1/20th of the time.
 The rest of the time, the actor chooses the highest-scored move from a q-learning matrix of the three possible moves. 
 
-The q-learning values are updated every frame using a high reward for moving right, an equally high punishment for moving left, a bonus for collecting a book within the frame, and a malus for losing health.
+The q-learning values are updated every frame using a high reward for moving right, no reward for moving left, a bonus for collecting a book within the frame, and a punishment for losing health.
+
+We discovered that penalizing the agent for moving left was counterproductive - as the reward for moving right still incentivizes it to to advance in the level, we are free to take a neutral position (0 reward)on whether the agent moves left, allowing it to move left to avoid the punishment for taking enemy damage.
 
 ## Results
 
