@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/environment/block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BookSpawn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://libraryDesk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Spawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://ReinfLearn.gd" type="Script" id=6]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -143,7 +144,6 @@ position = Vector2( 782, 582 )
 position = Vector2( 1200, 584 )
 
 [node name="books" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Book Spawn" parent="books" instance=ExtResource( 3 )]
 position = Vector2( 366.862, 368.782 )
@@ -171,3 +171,6 @@ position = Vector2( 130, 490 )
 
 [node name="enemy spawn" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1060, 510 )
+
+[node name="RL" type="Node" parent="."]
+script = ExtResource( 6 )
