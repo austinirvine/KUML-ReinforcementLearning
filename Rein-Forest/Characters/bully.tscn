@@ -14,7 +14,7 @@ self_modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -4.76837e-007, -4.29153e-006 )
+position = Vector2( -4.76837e-07, -4.29153e-06 )
 scale = Vector2( 3.07692, 3.07692 )
 shape = SubResource( 1 )
 
