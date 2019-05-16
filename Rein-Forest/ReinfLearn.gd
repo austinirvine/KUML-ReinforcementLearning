@@ -23,14 +23,14 @@ func _ready():
 	for i in range(numActions):
 		actions.append(i)
 		q.append(0)
-		
+
 func arrMax(arr):
 	var maxVal = -9999999
 	for i in range(arr.size()):
 		maxVal = max(i, maxVal)
 	return maxVal
-	
-		
+
+
 func learn():
 	var exploreRand = randf()
 	var actionToTake = -1
@@ -44,7 +44,8 @@ func learn():
 				maxIndex = i
 				maxVal = q[i]
 		actionToTake = maxIndex
-	var player = get_node("../player spawn/Player")
+#	var player = get_node("../player spawn/Player")
+	var player = get_node("../player spawn/").get_child(3)
 	var prevPlayerPosX = player.get_position().x
 	var prevPlayerPosY = player.get_position().y
 	var prevBookCount = player.book_count
@@ -67,13 +68,13 @@ func learn():
 	#if char has moved right, give negative
 	#if char got a book or finished level, give bonus
 	q[actionToTake] = q[actionToTake] + lr * (reward + gamma * arrMax(q)) - q[actionToTake]
-	print(q[0])
-	print(q[1])
-	print(q[2])
-	
+#	print(q[0])
+#	print(q[1])
+#	print(q[2])
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(get_node("../player spawn/Player") != null):
+	if(get_node("../player spawn/").get_child(3) != null):
 		learn()
-	else:
-		print("Player null")
+#	else:
+#		print("Player null")

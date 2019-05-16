@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://scenes/environment/block.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Book.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BookSpawn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://libraryDesk.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Spawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ReinfLearn.gd" type="Script" id=6]
@@ -144,25 +144,24 @@ position = Vector2( 782, 582 )
 position = Vector2( 1200, 584 )
 
 [node name="books" type="Node" parent="."]
-editor/display_folded = true
 
-[node name="Book" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 380, 370 )
+[node name="Book Spawn" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 366.862, 368.782 )
 
-[node name="Book4" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 692, 242 )
+[node name="Book Spawn4" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 675.877, 237.754 )
 
-[node name="Book2" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 460, 370 )
+[node name="Book Spawn2" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 453.204, 368.782 )
 
-[node name="Book6" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 770, 240 )
+[node name="Book Spawn6" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 762.219, 237.754 )
 
-[node name="Book3" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 530, 370 )
+[node name="Book Spawn3" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 529.701, 366.51 )
 
-[node name="Book5" parent="books" instance=ExtResource( 3 )]
-position = Vector2( 842, 242 )
+[node name="Book Spawn5" parent="books" instance=ExtResource( 3 )]
+position = Vector2( 838.715, 235.482 )
 
 [node name="Desk" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1200, 480 )
