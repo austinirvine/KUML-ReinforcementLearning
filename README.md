@@ -10,16 +10,19 @@ As such, all code is written in Godot's Python-esque GDScript language.
 
 The goal of the main character is to collect all 6 'books' within the level and reach the end without dying due to contact with enemies.
 The player may move left, move right, and jump. Jumping on the heads of enemies does not deal damage.
-Dying or reaching the goal simply resets the game state, so that reinforcement learning can continue.
 
 Users can play the game using manual input using the 'Play' option on the title screen, or can choose to let the RL algorithm play.
+
+Dying or reaching the goal simply resets the game state, so that play (or reinforcement learning) can continue.
+
+We hypothesized that a very simple RL algorithm could be trained to play this game by rewarding rightward movement and book collection, and penalizing leftward movement and receiving damage.
 
 ## RL
 
 The reinforcement learning algorithm is a very simple, 1-state q-learning algorithm. The actor explores (makes a random move) 1/20th of the time.
 The rest of the time, the actor chooses the highest-scored move from a q-learning matrix of the three possible moves. 
 
-The q-learning values are updated every frame using a high reward for moving right, an equally high punishment for moving left, and a bonus for collecting books.
+The q-learning values are updated every frame using a high reward for moving right, an equally high punishment for moving left, a bonus for collecting a book within the frame, and a malus for losing health.
 
 ## Results
 
