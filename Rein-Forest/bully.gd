@@ -36,3 +36,6 @@ func _movement() :
 			if "Player" in get_slide_collision(i).collider.name:
 				get_slide_collision(i).collider.hurt()
 	pass
+
+func _on_Timer_timeout():
+	self.queue_free()
